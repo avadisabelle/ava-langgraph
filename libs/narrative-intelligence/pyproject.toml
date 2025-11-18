@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "langgraph-narrative-intelligence"
+version = "0.1.0"
+description = "Narrative Intelligence Toolkit for analyzing narratives using the Narrative Context Protocol (NCP) with LangGraph."
+authors = [
+    {name = "Mia & Miette", email = "jgi@jgwill.com"}
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = "MIT"
+license-files = ['LICENSE']
+classifiers = [
+    'Development Status :: 3 - Alpha',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: Implementation :: CPython',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3 :: Only',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: 3.13',
+]
+dependencies = [
+    "langgraph>=0.2.0",
+    "langgraph-checkpoint>=2.1.0,<4.0.0",
+    "langchain-core>=1.0.0",
+    "pydantic>=2.0.0",
+]
+
+[project.urls]
+Source = "https://github.com/avadisabelle/ava-langgraph/tree/main/libs/narrative-intelligence"
+
+[dependency-groups]
+test = [
+    "pytest",
+    "pytest-asyncio",
+    "pytest-mock",
+    "syrupy",
+]
+dev = [
+    "langgraph",
+    "langgraph-checkpoint",
+]
