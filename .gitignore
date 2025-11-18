@@ -182,3 +182,6 @@ Chinook.db
 .turbo
 .editorconfig
 .scratch
+.env*
+.mcp*
+.settings*
