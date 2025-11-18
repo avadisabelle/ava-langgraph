@@ -1,0 +1,7 @@
+#!/bin/bash
+. _env.sh
+export SESSION_ID=364e1265-ec0c-440f-85ed-a1ab388c50f3
+export session_id__AvaLangGraphHolisticNCP_2511180818
+export session_id__AvaLangGraphHolisticNCP_2511180818__MCP_CONFIG
+export session_id__AvaLangGraphHolisticNCP_2511180818__ADD_DIR
+claude "<prompt>" --mcp-config $session_id__AvaLangGraphHolisticNCP_2511180818__MCP_CONFIG --add-dir $session_id__AvaLangGraphHolisticNCP_2511180818__ADD_DIR --session-id $session_id__AvaLangGraphHolisticNCP_2511180818
