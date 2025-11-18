@@ -45,3 +45,6 @@ dev = [
     "langgraph",
     "langgraph-checkpoint",
 ]
+
+[tool.hatch.build.targets.wheel]
+packages = ["narrative_intelligence"]

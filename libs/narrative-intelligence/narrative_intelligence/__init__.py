@@ -1,5 +1,5 @@
 """
->à<8 Narrative Intelligence Toolkit
+Narrative Intelligence Toolkit
 
 A toolkit for analyzing narratives using the Narrative Context Protocol (NCP) within LangGraph workflows.
 """
@@ -26,6 +26,8 @@ from .nodes import (
     NarrativeTraversalNode,
     EmotionalBeatClassifierNode,
 )
+from .nodes.narrative_traversal import TraversalMode
+from .nodes.emotional_classifier import EmotionalTone
 
 # Graphs
 from .graphs import (
@@ -55,6 +57,8 @@ __all__ = [
     "NCPLoaderNode",
     "NarrativeTraversalNode",
     "EmotionalBeatClassifierNode",
+    "TraversalMode",
+    "EmotionalTone",
 
     # Graphs
     "CharacterArcGenerator",

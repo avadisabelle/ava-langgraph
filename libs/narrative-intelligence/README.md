@@ -29,11 +29,11 @@ from narrative_intelligence import NCPLoaderNode, CharacterArcGenerator
 
 # Load NCP data
 loader = NCPLoaderNode()
-state = loader.load("path/to/ncp.json")
+ncp_data = loader.load_from_file("path/to/ncp.json")
 
 # Analyze character arc
 arc_generator = CharacterArcGenerator()
-character_arc = arc_generator.generate(state, player_id="protagonist_1")
+character_arc = arc_generator.generate(ncp_data, player_id="protagonist_1")
 ```
 
 ## Development
