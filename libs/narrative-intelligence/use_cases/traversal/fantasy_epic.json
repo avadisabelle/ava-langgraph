@@ -1,0 +1,213 @@
+{
+  "title": "The Shattered Crown",
+  "author": "Fantasy Epic Series",
+  "version": "1.0",
+  "players": [
+    {
+      "player_id": "elara_001",
+      "name": "Elara Moonwhisper",
+      "wound": "Witnessed her kingdom's destruction as a child",
+      "desire": "To unite the fractured realms and prevent another war",
+      "arc": "From revenge-driven warrior to diplomatic peacemaker",
+      "role": "protagonist",
+      "metadata": {"race": "Elf", "class": "Ranger"}
+    },
+    {
+      "player_id": "thorne_002",
+      "name": "Thorne Ironheart",
+      "wound": "Exiled from his clan for refusing an unjust order",
+      "desire": "To prove honor matters more than blind loyalty",
+      "arc": "From outcast to respected leader",
+      "role": "ally",
+      "metadata": {"race": "Dwarf", "class": "Warrior"}
+    },
+    {
+      "player_id": "lysandra_003",
+      "name": "Lysandra the Wise",
+      "wound": "Her prophecy was ignored, leading to catastrophe",
+      "desire": "To be heard and believed",
+      "arc": "From dismissed oracle to trusted advisor",
+      "role": "mentor",
+      "metadata": {"race": "Human", "class": "Seer"}
+    }
+  ],
+  "perspectives": [
+    {
+      "perspective_id": "vengeance_justice",
+      "name": "Vengeance vs Justice",
+      "description": "The line between righteous revenge and true justice",
+      "thematic_question": "Can you seek justice without becoming the monster you fight?",
+      "tension": "Vengeance vs Justice",
+      "metadata": {}
+    },
+    {
+      "perspective_id": "power_responsibility",
+      "name": "Power vs Responsibility",
+      "description": "The burden of leadership and the cost of power",
+      "thematic_question": "Does power corrupt, or does it reveal who we truly are?",
+      "tension": "Power vs Responsibility",
+      "metadata": {}
+    },
+    {
+      "perspective_id": "unity_division",
+      "name": "Unity vs Division",
+      "description": "The challenge of bringing together those who have been enemies",
+      "thematic_question": "Can ancient enemies truly become allies?",
+      "tension": "Unity vs Division",
+      "metadata": {}
+    }
+  ],
+  "storybeats": [
+    {
+      "storybeat_id": "sb_001",
+      "title": "The Call to Arms",
+      "description": "Elara receives word that the ancient enemy is rising again. She must decide whether to seek revenge or build alliances.",
+      "emotional_weight": "Tense",
+      "moments": [
+        {
+          "moment_id": "m001",
+          "description": "Messenger arrives with dire news",
+          "timestamp": "Chapter 1"
+        }
+      ],
+      "related_players": ["elara_001"],
+      "related_storypoints": ["sp_001"],
+      "metadata": {}
+    },
+    {
+      "storybeat_id": "sb_002",
+      "title": "The Unlikely Alliance",
+      "description": "Elara encounters Thorne, an exiled dwarf. Despite their peoples' historical enmity, they recognize a common cause.",
+      "emotional_weight": "Hopeful",
+      "moments": [
+        {
+          "moment_id": "m002",
+          "description": "First clash becomes mutual respect",
+          "timestamp": "Chapter 3"
+        }
+      ],
+      "related_players": ["elara_001", "thorne_002"],
+      "related_storypoints": ["sp_002"],
+      "metadata": {}
+    },
+    {
+      "storybeat_id": "sb_003",
+      "title": "The Prophecy Revealed",
+      "description": "Lysandra shares a devastating prophecy: unity can only be achieved through great sacrifice. Elara faces the cost of leadership.",
+      "emotional_weight": "Devastating",
+      "moments": [
+        {
+          "moment_id": "m003",
+          "description": "Vision of the future shown",
+          "timestamp": "Chapter 7"
+        }
+      ],
+      "related_players": ["elara_001", "lysandra_003"],
+      "related_storypoints": ["sp_003"],
+      "metadata": {}
+    },
+    {
+      "storybeat_id": "sb_004",
+      "title": "Council of Rivals",
+      "description": "Elara, Thorne, and Lysandra bring together the fractured realms for the first time in centuries. Old wounds threaten to destroy the fragile peace.",
+      "emotional_weight": "Conflicted",
+      "moments": [
+        {
+          "moment_id": "m004",
+          "description": "Ancient grudges surface",
+          "timestamp": "Chapter 10"
+        }
+      ],
+      "related_players": ["elara_001", "thorne_002", "lysandra_003"],
+      "related_storypoints": ["sp_004"],
+      "metadata": {}
+    },
+    {
+      "storybeat_id": "sb_005",
+      "title": "The Choice of Mercy",
+      "description": "Elara captures the enemy commander - the one who destroyed her kingdom. She can choose vengeance or set an example of justice.",
+      "emotional_weight": "Tense",
+      "moments": [
+        {
+          "moment_id": "m005",
+          "description": "Face to face with the destroyer",
+          "timestamp": "Chapter 12"
+        }
+      ],
+      "related_players": ["elara_001"],
+      "related_storypoints": ["sp_005"],
+      "metadata": {}
+    },
+    {
+      "storybeat_id": "sb_006",
+      "title": "The Unity Forged",
+      "description": "By choosing justice over vengeance, Elara inspires the realms to truly unite. The crown is not claimed but earned through sacrifice.",
+      "emotional_weight": "Triumphant",
+      "moments": [
+        {
+          "moment_id": "m006",
+          "description": "The realms pledge their unity",
+          "timestamp": "Chapter 15"
+        }
+      ],
+      "related_players": ["elara_001", "thorne_002", "lysandra_003"],
+      "related_storypoints": ["sp_006"],
+      "metadata": {}
+    }
+  ],
+  "storypoints": [
+    {
+      "storypoint_id": "sp_001",
+      "title": "Inciting Incident",
+      "description": "The ancient enemy returns",
+      "type": "inciting_incident",
+      "related_players": ["elara_001"],
+      "metadata": {}
+    },
+    {
+      "storypoint_id": "sp_002",
+      "title": "First Alliance",
+      "description": "Elf and dwarf join forces",
+      "type": "turning_point",
+      "related_players": ["elara_001", "thorne_002"],
+      "metadata": {}
+    },
+    {
+      "storypoint_id": "sp_003",
+      "title": "Cost Revealed",
+      "description": "The prophecy shows the price of unity",
+      "type": "midpoint",
+      "related_players": ["elara_001", "lysandra_003"],
+      "metadata": {}
+    },
+    {
+      "storypoint_id": "sp_004",
+      "title": "Gathering",
+      "description": "All realms meet for the first time",
+      "type": "gathering_forces",
+      "related_players": ["elara_001", "thorne_002", "lysandra_003"],
+      "metadata": {}
+    },
+    {
+      "storypoint_id": "sp_005",
+      "title": "Moral Climax",
+      "description": "Elara chooses justice over vengeance",
+      "type": "climax",
+      "related_players": ["elara_001"],
+      "metadata": {}
+    },
+    {
+      "storypoint_id": "sp_006",
+      "title": "Resolution",
+      "description": "Unity is achieved",
+      "type": "resolution",
+      "related_players": ["elara_001", "thorne_002", "lysandra_003"],
+      "metadata": {}
+    }
+  ],
+  "metadata": {
+    "genre": "Epic Fantasy",
+    "setting": "The Fractured Realms",
+    "themes": ["unity", "justice", "leadership", "sacrifice"]
+  }
+}
