@@ -1,0 +1,197 @@
+{
+  "title": "Summer of Changes",
+  "author": "Coming of Age Series",
+  "version": "1.0",
+  "players": [
+    {
+      "player_id": "maya_001",
+      "name": "Maya Rodriguez",
+      "wound": "Parents' divorce shattered her sense of security",
+      "desire": "To feel in control of her life again",
+      "arc": "From trying to control everything to accepting uncertainty with grace",
+      "role": "protagonist",
+      "metadata": {"age": 16, "type": "coming-of-age"}
+    },
+    {
+      "player_id": "derek_002",
+      "name": "Derek Chen",
+      "wound": "Constantly compared to his perfect older brother",
+      "desire": "To be seen for who he is, not who he should be",
+      "arc": "From living in a shadow to finding his own light",
+      "role": "deuteragonist",
+      "metadata": {"age": 17, "type": "self-discovery"}
+    },
+    {
+      "player_id": "grandma_rosa_003",
+      "name": "Grandma Rosa",
+      "wound": "Outlived her husband and most of her friends",
+      "desire": "To leave wisdom behind before it's too late",
+      "arc": "From fearing irrelevance to embracing her role as keeper of stories",
+      "role": "mentor",
+      "metadata": {"age": 78, "type": "wisdom-keeper"}
+    }
+  ],
+  "perspectives": [
+    {
+      "perspective_id": "control_acceptance",
+      "name": "Control vs Acceptance",
+      "description": "The struggle between trying to control life and accepting what we cannot change",
+      "thematic_question": "Can we find peace without control?",
+      "tension": "Control vs Acceptance",
+      "metadata": {}
+    }
+  ],
+  "storybeats": [
+    {
+      "storybeat_id": "sb_001",
+      "title": "The Announcement",
+      "description": "Maya's mom announces they're spending the summer at Grandma Rosa's. Maya tries to refuse but has no control.",
+      "emotional_weight": "Tense",
+      "moments": [
+        {
+          "moment_id": "m001",
+          "description": "Maya slams her bedroom door",
+          "timestamp": "Week 1"
+        }
+      ],
+      "related_players": ["maya_001", "grandma_rosa_003"],
+      "related_storypoints": ["sp_001"],
+      "metadata": {}
+    },
+    {
+      "storybeat_id": "sb_002",
+      "title": "First Real Conversation",
+      "description": "Maya and Derek meet at the community center. Both are clearly there against their will. Their mutual resentment becomes unexpected connection.",
+      "emotional_weight": "Hopeful",
+      "moments": [
+        {
+          "moment_id": "m002",
+          "description": "They both roll their eyes at the same moment",
+          "timestamp": "Week 2"
+        }
+      ],
+      "related_players": ["maya_001", "derek_002"],
+      "related_storypoints": ["sp_002"],
+      "metadata": {}
+    },
+    {
+      "storybeat_id": "sb_003",
+      "title": "Grandma's Story",
+      "description": "Rosa shares how she survived her husband's death - not by controlling her grief, but by letting herself feel it fully.",
+      "emotional_weight": "Melancholic",
+      "moments": [
+        {
+          "moment_id": "m003",
+          "description": "Rosa shows Maya an old photo album",
+          "timestamp": "Week 4"
+        }
+      ],
+      "related_players": ["maya_001", "grandma_rosa_003"],
+      "related_storypoints": ["sp_003"],
+      "metadata": {}
+    },
+    {
+      "storybeat_id": "sb_004",
+      "title": "Derek's Confession",
+      "description": "Derek reveals he's been accepted to art school but his parents want him to study medicine. Maya realizes control isn't always power.",
+      "emotional_weight": "Conflicted",
+      "moments": [
+        {
+          "moment_id": "m004",
+          "description": "Derek shows Maya his portfolio",
+          "timestamp": "Week 6"
+        }
+      ],
+      "related_players": ["maya_001", "derek_002"],
+      "related_storypoints": ["sp_004"],
+      "metadata": {}
+    },
+    {
+      "storybeat_id": "sb_005",
+      "title": "Letting Go",
+      "description": "Maya stops trying to get her parents back together. Instead, she accepts two homes, two lives, and finds freedom in that acceptance.",
+      "emotional_weight": "Peaceful",
+      "moments": [
+        {
+          "moment_id": "m005",
+          "description": "Maya unpacks her bag at Grandma's",
+          "timestamp": "Week 8"
+        }
+      ],
+      "related_players": ["maya_001"],
+      "related_storypoints": ["sp_005"],
+      "metadata": {}
+    },
+    {
+      "storybeat_id": "sb_006",
+      "title": "Summer's End",
+      "description": "As summer ends, Maya, Derek, and Rosa sit together watching the sunset. Nothing is solved, but everything has changed.",
+      "emotional_weight": "Hopeful",
+      "moments": [
+        {
+          "moment_id": "m006",
+          "description": "Three generations, three stories, one moment",
+          "timestamp": "Week 12"
+        }
+      ],
+      "related_players": ["maya_001", "derek_002", "grandma_rosa_003"],
+      "related_storypoints": ["sp_006"],
+      "metadata": {}
+    }
+  ],
+  "storypoints": [
+    {
+      "storypoint_id": "sp_001",
+      "title": "Forced Change",
+      "description": "Maya must spend summer away from her normal life",
+      "type": "inciting_incident",
+      "related_players": ["maya_001"],
+      "metadata": {}
+    },
+    {
+      "storypoint_id": "sp_002",
+      "title": "Unexpected Connection",
+      "description": "Maya and Derek become friends",
+      "type": "turning_point",
+      "related_players": ["maya_001", "derek_002"],
+      "metadata": {}
+    },
+    {
+      "storypoint_id": "sp_003",
+      "title": "Wisdom Shared",
+      "description": "Rosa teaches about acceptance",
+      "type": "midpoint",
+      "related_players": ["maya_001", "grandma_rosa_003"],
+      "metadata": {}
+    },
+    {
+      "storypoint_id": "sp_004",
+      "title": "Mirror Moment",
+      "description": "Maya sees her struggle reflected in Derek",
+      "type": "revelation",
+      "related_players": ["maya_001", "derek_002"],
+      "metadata": {}
+    },
+    {
+      "storypoint_id": "sp_005",
+      "title": "Transformation",
+      "description": "Maya chooses acceptance over control",
+      "type": "climax",
+      "related_players": ["maya_001"],
+      "metadata": {}
+    },
+    {
+      "storypoint_id": "sp_006",
+      "title": "Resolution",
+      "description": "Three generations find peace together",
+      "type": "resolution",
+      "related_players": ["maya_001", "derek_002", "grandma_rosa_003"],
+      "metadata": {}
+    }
+  ],
+  "metadata": {
+    "genre": "Coming of Age",
+    "setting": "Small coastal town, one summer",
+    "themes": ["acceptance", "growth", "intergenerational connection"]
+  }
+}

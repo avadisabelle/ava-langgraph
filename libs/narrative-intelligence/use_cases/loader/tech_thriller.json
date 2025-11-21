@@ -1,0 +1,91 @@
+{
+  "title": "Corporate Espionage",
+  "author": "Tech Thriller Series",
+  "version": "1.0",
+  "players": [
+    {
+      "player_id": "alex_001",
+      "name": "Alex Chen",
+      "wound": "Betrayed by a mentor who stole their research",
+      "desire": "To prove their worth and reclaim their reputation",
+      "arc": "From distrustful loner to collaborative team leader",
+      "role": "protagonist",
+      "metadata": {"age": 32, "occupation": "Security Analyst"}
+    },
+    {
+      "player_id": "jordan_002",
+      "name": "Jordan Kim",
+      "wound": "Lost company to hostile takeover",
+      "desire": "To expose corporate corruption",
+      "arc": "From vengeful crusader to justice seeker",
+      "role": "ally",
+      "metadata": {"age": 45, "occupation": "Former CEO"}
+    }
+  ],
+  "perspectives": [
+    {
+      "perspective_id": "trust_ambition",
+      "name": "Trust vs Ambition",
+      "description": "The conflict between trusting others and pursuing personal success",
+      "thematic_question": "Can you succeed without betraying those who trust you?",
+      "tension": "Trust vs Ambition",
+      "metadata": {}
+    }
+  ],
+  "storybeats": [
+    {
+      "storybeat_id": "sb_001",
+      "title": "The Data Breach",
+      "description": "Alex discovers a massive data breach at their company. Initial investigation suggests an inside job.",
+      "emotional_weight": "Tense",
+      "moments": [
+        {
+          "moment_id": "m001",
+          "description": "Late night alert triggers",
+          "timestamp": "Day 1, 23:45"
+        }
+      ],
+      "related_players": ["alex_001"],
+      "related_storypoints": ["sp_001"],
+      "metadata": {}
+    },
+    {
+      "storybeat_id": "sb_002",
+      "title": "Unlikely Partnership",
+      "description": "Jordan approaches Alex with insider information. Alex must decide whether to trust someone with their own agenda.",
+      "emotional_weight": "Conflicted",
+      "moments": [
+        {
+          "moment_id": "m002",
+          "description": "Secret meeting in parking garage",
+          "timestamp": "Day 3, 14:00"
+        }
+      ],
+      "related_players": ["alex_001", "jordan_002"],
+      "related_storypoints": ["sp_002"],
+      "metadata": {}
+    }
+  ],
+  "storypoints": [
+    {
+      "storypoint_id": "sp_001",
+      "title": "Discovery",
+      "description": "The breach is discovered",
+      "type": "inciting_incident",
+      "related_players": ["alex_001"],
+      "metadata": {}
+    },
+    {
+      "storypoint_id": "sp_002",
+      "title": "Alliance Forms",
+      "description": "Alex decides to trust Jordan",
+      "type": "turning_point",
+      "related_players": ["alex_001", "jordan_002"],
+      "metadata": {}
+    }
+  ],
+  "metadata": {
+    "genre": "Tech Thriller",
+    "setting": "Silicon Valley, Present Day"
+  }
+}
