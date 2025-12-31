@@ -185,3 +185,4 @@ Chinook.db
 .env*
 .mcp*
 .settings*
+.gemini

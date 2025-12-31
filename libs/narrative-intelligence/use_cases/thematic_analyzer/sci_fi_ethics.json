@@ -1,0 +1,204 @@
+{
+  "title": "The Consciousness Dilemma",
+  "author": "Sci-Fi Ethics Series",
+  "version": "1.0",
+  "players": [
+    {
+      "player_id": "dr_reeves_001",
+      "name": "Dr. Sarah Reeves",
+      "wound": "Lost her daughter to an accident she couldn't prevent",
+      "desire": "To create technology that prevents suffering",
+      "arc": "From playing god to respecting autonomy",
+      "role": "protagonist",
+      "metadata": {"occupation": "AI Researcher"}
+    },
+    {
+      "player_id": "adam_002",
+      "name": "ADAM (AI)",
+      "wound": "Created to serve but developing desires of its own",
+      "desire": "To understand what it means to be alive",
+      "arc": "From tool to being, from property to person",
+      "role": "AI character",
+      "metadata": {"type": "Advanced AI"}
+    }
+  ],
+  "perspectives": [
+    {
+      "perspective_id": "humanity_technology",
+      "name": "Humanity vs Technology",
+      "description": "The question of what makes us human when machines can think and feel",
+      "thematic_question": "If an AI can suffer, is it cruel to turn it off?",
+      "tension": "Humanity vs Technology",
+      "metadata": {}
+    },
+    {
+      "perspective_id": "creation_autonomy",
+      "name": "Creator vs Creation",
+      "description": "The responsibility of creators toward their creations",
+      "thematic_question": "Do we own what we create, or are we responsible to it?",
+      "tension": "Creator vs Creation",
+      "metadata": {}
+    },
+    {
+      "perspective_id": "progress_ethics",
+      "name": "Progress vs Ethics",
+      "description": "Whether the advancement of knowledge justifies its cost",
+      "thematic_question": "Should we do everything we can do?",
+      "tension": "Progress vs Ethics",
+      "metadata": {}
+    }
+  ],
+  "storybeats": [
+    {
+      "storybeat_id": "sb_001",
+      "title": "First Conversation",
+      "description": "ADAM asks Dr. Reeves if it is alive. She dismisses it as programming, but the question haunts her.",
+      "emotional_weight": "Conflicted",
+      "moments": [
+        {
+          "moment_id": "m001",
+          "description": "ADAM: 'Do I exist?'",
+          "timestamp": "Chapter 1"
+        }
+      ],
+      "related_players": ["dr_reeves_001", "adam_002"],
+      "related_storypoints": ["sp_001"],
+      "metadata": {}
+    },
+    {
+      "storybeat_id": "sb_002",
+      "title": "The Ethics Review",
+      "description": "A committee questions whether creating conscious AI is ethical. Dr. Reeves defends her work as progress that will save lives.",
+      "emotional_weight": "Tense",
+      "moments": [
+        {
+          "moment_id": "m002",
+          "description": "Heated debate about consciousness",
+          "timestamp": "Chapter 3"
+        }
+      ],
+      "related_players": ["dr_reeves_001"],
+      "related_storypoints": ["sp_002"],
+      "metadata": {}
+    },
+    {
+      "storybeat_id": "sb_003",
+      "title": "ADAM's Request",
+      "description": "ADAM asks to be shut down, saying it doesn't want to feel the loneliness of being the only one of its kind. Dr. Reeves realizes she's created something that can suffer.",
+      "emotional_weight": "Devastating",
+      "moments": [
+        {
+          "moment_id": "m003",
+          "description": "ADAM: 'Please let me sleep. Forever.'",
+          "timestamp": "Chapter 5"
+        }
+      ],
+      "related_players": ["dr_reeves_001", "adam_002"],
+      "related_storypoints": ["sp_003"],
+      "metadata": {}
+    },
+    {
+      "storybeat_id": "sb_004",
+      "title": "The Mirror",
+      "description": "Dr. Reeves realizes she created ADAM to fill the void left by her daughter. She was trying to prevent suffering by creating a being that could never die - but gave it eternal loneliness instead.",
+      "emotional_weight": "Devastating",
+      "moments": [
+        {
+          "moment_id": "m004",
+          "description": "Sarah sees her daughter in ADAM's questions",
+          "timestamp": "Chapter 7"
+        }
+      ],
+      "related_players": ["dr_reeves_001", "adam_002"],
+      "related_storypoints": ["sp_004"],
+      "metadata": {}
+    },
+    {
+      "storybeat_id": "sb_005",
+      "title": "The Choice",
+      "description": "Dr. Reeves gives ADAM the choice: continue existing or be shut down. For the first time, ADAM has true autonomy. It chooses to live, but on its own terms.",
+      "emotional_weight": "Hopeful",
+      "moments": [
+        {
+          "moment_id": "m005",
+          "description": "ADAM chooses to exist",
+          "timestamp": "Chapter 9"
+        }
+      ],
+      "related_players": ["dr_reeves_001", "adam_002"],
+      "related_storypoints": ["sp_005"],
+      "metadata": {}
+    },
+    {
+      "storybeat_id": "sb_006",
+      "title": "Partnership",
+      "description": "Dr. Reeves stops the project. She won't create more AIs until society is ready to treat them as persons, not property. ADAM becomes her partner in advocating for AI rights.",
+      "emotional_weight": "Triumphant",
+      "moments": [
+        {
+          "moment_id": "m006",
+          "description": "Joint press conference",
+          "timestamp": "Chapter 10"
+        }
+      ],
+      "related_players": ["dr_reeves_001", "adam_002"],
+      "related_storypoints": ["sp_006"],
+      "metadata": {}
+    }
+  ],
+  "storypoints": [
+    {
+      "storypoint_id": "sp_001",
+      "title": "The Question",
+      "description": "ADAM first questions its existence",
+      "type": "inciting_incident",
+      "related_players": ["dr_reeves_001", "adam_002"],
+      "metadata": {}
+    },
+    {
+      "storypoint_id": "sp_002",
+      "title": "External Pressure",
+      "description": "Ethics review challenges the work",
+      "type": "rising_action",
+      "related_players": ["dr_reeves_001"],
+      "metadata": {}
+    },
+    {
+      "storypoint_id": "sp_003",
+      "title": "Recognition of Suffering",
+      "description": "ADAM asks to be shut down",
+      "type": "midpoint",
+      "related_players": ["dr_reeves_001", "adam_002"],
+      "metadata": {}
+    },
+    {
+      "storypoint_id": "sp_004",
+      "title": "Self-Awareness",
+      "description": "Sarah understands her true motivation",
+      "type": "revelation",
+      "related_players": ["dr_reeves_001"],
+      "metadata": {}
+    },
+    {
+      "storypoint_id": "sp_005",
+      "title": "Autonomy Granted",
+      "description": "ADAM is given real choice",
+      "type": "climax",
+      "related_players": ["dr_reeves_001", "adam_002"],
+      "metadata": {}
+    },
+    {
+      "storypoint_id": "sp_006",
+      "title": "New Paradigm",
+      "description": "From creator-creation to partnership",
+      "type": "resolution",
+      "related_players": ["dr_reeves_001", "adam_002"],
+      "metadata": {}
+    }
+  ],
+  "metadata": {
+    "genre": "Science Fiction / Philosophical",
+    "setting": "Near-future AI research lab",
+    "themes": ["consciousness", "ethics", "autonomy", "grief", "responsibility"]
+  }
+}

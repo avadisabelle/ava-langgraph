@@ -1,0 +1,7 @@
+#!/bin/bash
+. _env.sh
+export SESSION_ID=51a8e7f2-781d-466e-ad0a-47e3d109005a
+export session_id__OBserveFeaturesAndCreateTraces_2511201855
+export session_id__OBserveFeaturesAndCreateTraces_2511201855__MCP_CONFIG
+export session_id__OBserveFeaturesAndCreateTraces_2511201855__ADD_DIR
+claude "<prompt>" --mcp-config $session_id__OBserveFeaturesAndCreateTraces_2511201855__MCP_CONFIG --add-dir $session_id__OBserveFeaturesAndCreateTraces_2511201855__ADD_DIR --session-id $session_id__OBserveFeaturesAndCreateTraces_2511201855

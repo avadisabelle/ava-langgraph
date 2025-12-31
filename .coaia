@@ -1,0 +1,7 @@
+# CoaiAPy Configuration File
+# Generated for AVA LangGraph Holistic NCP Session
+
+langfuse_public_key=pk-lf-0802a740-e692-481e-a8dd-1a720d37f5f1
+langfuse_secret_key=sk-lf-793dc261-3a68-4cbf-9ad5-c81c17f16bb1
+langfuse_base_url=https://cloud.langfuse.com
+langfuse_project_id=cmbdkhbb900ffad07skdzt8hg

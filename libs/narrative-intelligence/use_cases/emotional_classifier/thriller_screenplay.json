@@ -1,0 +1,142 @@
+{
+  "title": "Last Train to Mercy",
+  "author": "Thriller Screenplay",
+  "version": "1.0",
+  "players": [
+    {
+      "player_id": "kate_001",
+      "name": "Kate Morrison",
+      "wound": "Survivor of a hostage situation",
+      "desire": "To feel safe again",
+      "arc": "From paralyzed by fear to taking action",
+      "role": "protagonist",
+      "metadata": {"occupation": "Former Negotiator"}
+    }
+  ],
+  "perspectives": [
+    {
+      "perspective_id": "fear_courage",
+      "name": "Fear vs Courage",
+      "description": "The journey from paralysis to action",
+      "thematic_question": "Can you be brave when you're terrified?",
+      "tension": "Fear vs Courage",
+      "metadata": {}
+    }
+  ],
+  "storybeats": [
+    {
+      "storybeat_id": "sb_001",
+      "title": "Ordinary World",
+      "description": "Kate boards the late train home, exhausted after therapy. Everything seems normal. People read, sleep, scroll their phones.",
+      "moments": [],
+      "related_players": ["kate_001"],
+      "related_storypoints": [],
+      "metadata": {"act": 1, "sequence": 1}
+    },
+    {
+      "storybeat_id": "sb_002",
+      "title": "First Sign",
+      "description": "Kate notices a passenger watching her. Her PTSD triggers. Heart racing. Palms sweating. Is it real or her paranoia?",
+      "moments": [],
+      "related_players": ["kate_001"],
+      "related_storypoints": [],
+      "metadata": {"act": 1, "sequence": 2}
+    },
+    {
+      "storybeat_id": "sb_003",
+      "title": "Locked In",
+      "description": "The train passes its stop. Doesn't slow. Kate sees the conductor slumped. This is happening again.",
+      "moments": [],
+      "related_players": ["kate_001"],
+      "related_storypoints": [],
+      "metadata": {"act": 1, "sequence": 3}
+    },
+    {
+      "storybeat_id": "sb_004",
+      "title": "Panic Spreads",
+      "description": "Passengers realize they're trapped. Chaos erupts. Kate freezes, flashbacks overwhelming her.",
+      "moments": [],
+      "related_players": ["kate_001"],
+      "related_storypoints": [],
+      "metadata": {"act": 2, "sequence": 1}
+    },
+    {
+      "storybeat_id": "sb_005",
+      "title": "The Demand",
+      "description": "Hijackers reveal themselves. They want Kate. She was the negotiator who 'killed' their leader five years ago. Revenge.",
+      "moments": [],
+      "related_players": ["kate_001"],
+      "related_storypoints": [],
+      "metadata": {"act": 2, "sequence": 2}
+    },
+    {
+      "storybeat_id": "sb_006",
+      "title": "Impossible Choice",
+      "description": "Kate can surrender and they kill her, or fight back and risk everyone. She's drowning in fear.",
+      "moments": [],
+      "related_players": ["kate_001"],
+      "related_storypoints": [],
+      "metadata": {"act": 2, "sequence": 3}
+    },
+    {
+      "storybeat_id": "sb_007",
+      "title": "Small Victory",
+      "description": "Kate uses her training. Talks a hijacker into hesitating for just ten seconds. Enough to save one passenger.",
+      "moments": [],
+      "related_players": ["kate_001"],
+      "related_storypoints": [],
+      "metadata": {"act": 2, "sequence": 4}
+    },
+    {
+      "storybeat_id": "sb_008",
+      "title": "Darkest Hour",
+      "description": "Hijacker executes a hostage in retaliation. Kate breaks. She failed again. She'll always fail.",
+      "moments": [],
+      "related_players": ["kate_001"],
+      "related_storypoints": [],
+      "metadata": {"act": 2, "sequence": 5}
+    },
+    {
+      "storybeat_id": "sb_009",
+      "title": "The Shift",
+      "description": "Another passenger whispers: 'You saved my daughter. Whatever happens, you saved her.' Kate realizes she can act despite fear.",
+      "moments": [],
+      "related_players": ["kate_001"],
+      "related_storypoints": [],
+      "metadata": {"act": 3, "sequence": 1}
+    },
+    {
+      "storybeat_id": "sb_010",
+      "title": "The Plan",
+      "description": "Kate forms a plan. Hands still shaking, voice still breaking, but moving forward anyway. This is courage.",
+      "moments": [],
+      "related_players": ["kate_001"],
+      "related_storypoints": [],
+      "metadata": {"act": 3, "sequence": 2}
+    },
+    {
+      "storybeat_id": "sb_011",
+      "title": "The Confrontation",
+      "description": "Kate faces the leader. Terrified but unmoving. Uses everything she learned from failing. High-stakes negotiation at 90mph.",
+      "moments": [],
+      "related_players": ["kate_001"],
+      "related_storypoints": [],
+      "metadata": {"act": 3, "sequence": 3}
+    },
+    {
+      "storybeat_id": "sb_012",
+      "title": "Resolution",
+      "description": "Train stops. Hostages safe. Kate steps onto the platform. She's still afraid. She'll always be afraid. But fear doesn't own her anymore.",
+      "moments": [],
+      "related_players": ["kate_001"],
+      "related_storypoints": [],
+      "metadata": {"act": 3, "sequence": 4}
+    }
+  ],
+  "storypoints": [],
+  "metadata": {
+    "genre": "Psychological Thriller",
+    "setting": "Late-night commuter train",
+    "structure": "Three-act screenplay"
+  }
+}

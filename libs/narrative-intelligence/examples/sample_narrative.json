@@ -1,0 +1,158 @@
+{
+  "title": "The Journey Home",
+  "author": "Sample Narrative",
+  "version": "1.0",
+  "players": [
+    {
+      "player_id": "sarah_001",
+      "name": "Sarah",
+      "wound": "Abandoned by her family as a child, leading to deep trust issues",
+      "desire": "To find belonging and rebuild connections with others",
+      "arc": "Sarah transforms from a lone wanderer to someone who opens her heart to a chosen family",
+      "role": "protagonist",
+      "metadata": {}
+    },
+    {
+      "player_id": "marcus_002",
+      "name": "Marcus",
+      "wound": "Lost his home in a war, carries guilt for surviving when others didn't",
+      "desire": "To protect others and prevent what happened to him from happening again",
+      "arc": "Marcus learns that true protection comes from empowering others, not controlling them",
+      "role": "mentor",
+      "metadata": {}
+    }
+  ],
+  "perspectives": [
+    {
+      "perspective_id": "safety_vulnerability",
+      "name": "Safety vs Vulnerability",
+      "description": "The tension between protecting oneself and opening up to others",
+      "thematic_question": "Can we truly be safe without being vulnerable?",
+      "tension": "Safety vs Vulnerability",
+      "metadata": {}
+    },
+    {
+      "perspective_id": "belonging_freedom",
+      "name": "Belonging vs Freedom",
+      "description": "The balance between connection with others and personal autonomy",
+      "thematic_question": "Must we sacrifice freedom to belong?",
+      "tension": "Belonging vs Freedom",
+      "metadata": {}
+    }
+  ],
+  "storybeats": [
+    {
+      "storybeat_id": "sb_001",
+      "title": "The Abandoned Camp",
+      "description": "Sarah discovers an abandoned camp that reminds her of her childhood. The scattered belongings trigger memories of being left behind. She hesitates to enter, her walls going up.",
+      "emotional_weight": "Melancholic",
+      "moments": [
+        {
+          "moment_id": "moment_001",
+          "description": "Sarah finds a child's toy among the ruins",
+          "timestamp": "Day 1, Morning",
+          "metadata": {}
+        }
+      ],
+      "related_players": ["sarah_001"],
+      "related_storypoints": ["sp_001"],
+      "metadata": {}
+    },
+    {
+      "storybeat_id": "sb_002",
+      "title": "Marcus Extends Trust",
+      "description": "Marcus offers to share his shelter with Sarah during a storm. Despite his protective nature, he gives her space and doesn't ask questions. Sarah cautiously accepts, a small crack in her armor.",
+      "emotional_weight": "Hopeful",
+      "moments": [
+        {
+          "moment_id": "moment_002",
+          "description": "Marcus leaves extra blankets without saying anything",
+          "timestamp": "Day 3, Evening",
+          "metadata": {}
+        }
+      ],
+      "related_players": ["sarah_001", "marcus_002"],
+      "related_storypoints": ["sp_002"],
+      "metadata": {}
+    },
+    {
+      "storybeat_id": "sb_003",
+      "title": "The Confession",
+      "description": "Sarah opens up to Marcus about her past, vulnerability flooding through her. She expects judgment but finds only understanding. Marcus shares his own guilt about the war.",
+      "emotional_weight": "Devastating",
+      "moments": [
+        {
+          "moment_id": "moment_003",
+          "description": "Sarah's hands shake as she speaks",
+          "timestamp": "Day 7, Night",
+          "metadata": {}
+        },
+        {
+          "moment_id": "moment_004",
+          "description": "Marcus reveals his survivor's guilt",
+          "timestamp": "Day 7, Night",
+          "metadata": {}
+        }
+      ],
+      "related_players": ["sarah_001", "marcus_002"],
+      "related_storypoints": ["sp_003"],
+      "metadata": {}
+    },
+    {
+      "storybeat_id": "sb_004",
+      "title": "Choosing to Stay",
+      "description": "When given the chance to leave alone and travel faster, Sarah chooses to stay with Marcus and the small community they've found. She realizes that true freedom isn't running away from connection.",
+      "emotional_weight": "Triumphant",
+      "moments": [
+        {
+          "moment_id": "moment_005",
+          "description": "Sarah tears up the map showing the solo route",
+          "timestamp": "Day 14, Dawn",
+          "metadata": {}
+        }
+      ],
+      "related_players": ["sarah_001", "marcus_002"],
+      "related_storypoints": ["sp_004"],
+      "metadata": {}
+    }
+  ],
+  "storypoints": [
+    {
+      "storypoint_id": "sp_001",
+      "title": "Inciting Incident",
+      "description": "Sarah's journey begins when she's forced to choose between staying isolated or seeking help",
+      "type": "inciting_incident",
+      "related_players": ["sarah_001"],
+      "metadata": {}
+    },
+    {
+      "storypoint_id": "sp_002",
+      "title": "First Connection",
+      "description": "The first time Sarah accepts help from another person",
+      "type": "turning_point",
+      "related_players": ["sarah_001", "marcus_002"],
+      "metadata": {}
+    },
+    {
+      "storypoint_id": "sp_003",
+      "title": "Emotional Climax",
+      "description": "Sarah and Marcus share their deepest wounds",
+      "type": "climax",
+      "related_players": ["sarah_001", "marcus_002"],
+      "metadata": {}
+    },
+    {
+      "storypoint_id": "sp_004",
+      "title": "Resolution",
+      "description": "Sarah chooses belonging over isolation",
+      "type": "resolution",
+      "related_players": ["sarah_001", "marcus_002"],
+      "metadata": {}
+    }
+  ],
+  "metadata": {
+    "genre": "Post-Apocalyptic Drama",
+    "themes": ["trust", "healing", "found family", "vulnerability"],
+    "setting": "A devastated world recovering from war"
+  }
+}
