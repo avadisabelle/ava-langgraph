@@ -2,20 +2,33 @@
 
 ## Executive Overview
 
-This mission unifies three interrelated projects into a cohesive stack:
+This mission unifies **six interrelated projects** into a cohesive stack:
+
+### Core Stack
 1. **Narrative Intelligence Toolkit** (LangGraph) - Narrative analysis & NCP protocol implementation
 2. **Agentic Flywheel** (Flowise + MCP) - Dynamic agent coordination & flow management  
 3. **Storytelling System** (LangGraph) - Story generation with RAG & ceremonial diary
 4. **LangChain Integration** - Langfuse tracing across the entire stack
 
-**Status**: Architectural blueprint phase with working components awaiting integration
+### Extended Stack (NEW)
+5. **ava-langflow** - Universal multi-backend router (Flowise + Langflow + future backends)
+6. **Miadi-46 Platform** - GitHub webhook event-driven architecture, ultimate consumer
+
+### The Vision: Three Universes (from Multiverse 3-Act)
+- **Engineer World** (Mia) - Technical precision, structural integrity, API schemas
+- **Ceremony World** (Ava8) - Indigenous relational protocols, sacred technology
+- **Story Engine World** (Miette) - Narrative structure, story beats, plot coherence
+
+Every GitHub webhook becomes a narrative event, processed through all three lenses.
+
+**Status**: Phase 1 COMPLETE, Phase 2 IN PROGRESS
 **Session ID**: `364e1265-ec0c-440f-85ed-a1ab388c50f3`
 
 ---
 
 ## 🏗️ Current State of Components
 
-### 1. **LangGraph: Narrative Intelligence Toolkit** ✅ ~80% Complete
+### 1. **LangGraph: Narrative Intelligence Toolkit** ✅ 100% Phase 1 + Phase 2 Starting
 📍 Location: `/workspace/langgraph/libs/narrative-intelligence/`
 
 **What's implemented:**
@@ -31,16 +44,57 @@ This mission unifies three interrelated projects into a cohesive stack:
 - ✅ **Narrative Graphs**:
   - `CharacterArcGenerator` - Analyze character development across story
   - `ThematicTensionAnalyzer` - Extract thematic tensions & conflicts
+  - **`ThreeUniverseProcessor`** - Process events through all 3 universe lenses
+  - **`NarrativeCoherenceEngine`** - Gap identification, coherence scoring, Trinity assessment (NEW!)
 
 - ✅ **Use Cases & Examples** - 5 comprehensive use cases with batch processing, multi-source loading, etc.
 
-**What's incomplete/superficial:**
-- ⚠️ **LangGraph execution** - Nodes defined but graph orchestration not fully tested
-- ⚠️ **State persistence** - No checkpoint integration for narrative state management
-- ⚠️ **Conditional routing** - Not fully wired with narrative-driven decisions
-- ⚠️ **Integration with storytelling system** - Standalone, not feeding back into generation
+- ✅ **Unified State Bridge** (Session 364e1265):
+  - `unified_state_bridge.py` - THE CONTRACT for all 6 systems (736 lines)
+  - Three-universe types (Engineer/Mia, Ceremony/Ava8, Story-Engine/Miette)
+  - NarrativePosition, StoryBeat, CharacterState, ThematicThread
+  - Complete JSON/Redis serialization
 
-**QA Status**: Test suite passes, comprehensive QA report generated (`QA_REPORT.md`)
+- ✅ **Redis Integration**:
+  - `redis_state.py` - Redis-backed state persistence (701 lines)
+  - Beat storage, event analysis caching, routing decision history
+  - Mock Redis for development/testing
+
+- ✅ **Checkpoint Integration**:
+  - `narrative_checkpointer.py` - LangGraph checkpoint wrapper (607 lines)
+  - Narrative-aware metadata extraction
+  - Cross-session coherence tracking (for Miadi-46)
+  - Act transition and episode boundary detection
+
+- ✅ **Three-Universe Processor**:
+  - `three_universe_processor.py` - Full LangGraph graph (930+ lines)
+  - Engineer World analysis (Mia - technical intent)
+  - Ceremony World analysis (Ava8 - relational intent)
+  - Story Engine World analysis (Miette - narrative function)
+  - Lead universe determination and coherence scoring
+  - Beat creation from webhook events
+
+- ✅ **NarrativeCoherenceEngine** (NEW - Phase 2):
+  - `coherence_engine.py` - Gap identification and quality scoring (800+ lines)
+  - Gap types: structural, thematic, character, sensory, continuity
+  - Coherence scoring: narrative flow, character consistency, pacing, theme saturation, continuity
+  - Routing suggestions to appropriate tools (Storyteller, Structurist, Architect, Author)
+  - **Trinity Assessment** (Mia/Miette/Ava8 perspectives)
+  - Full LangGraph workflow
+
+- ✅ **Working Examples**:
+  - `webhook_to_beat_example.py` - Complete webhook → 3-universe → beat pipeline
+
+**Tests**: 124 passing
+  - unified_state_bridge: 32 tests
+  - redis_state: 15 tests  
+  - narrative_checkpointer: 25 tests
+  - three_universe_processor: 26 tests
+  - coherence_engine: 26 tests (NEW!)
+
+**What's incomplete:**
+- ⚠️ **Integration with ava-langflow** - State bridge ready, handler not yet created
+- ⚠️ **Langfuse tracing integration** - Ready in LangChain, needs wiring
 
 ---
 
@@ -131,59 +185,208 @@ This mission unifies three interrelated projects into a cohesive stack:
 
 ---
 
+### 5. **ava-langflow: Universal Multi-Backend Router** ✅ ~70% Complete (NEW)
+📍 Location: `/workspace/ava-langflow/`
+
+**What's implemented:**
+- ✅ **Universal Backend Abstraction** - Flowise + Langflow + extensible
+  - `routing/router.py` - Intelligent backend selection (15KB comprehensive)
+  - Performance tracking with historical metrics
+  - Health-based routing decisions
+
+- ✅ **Langfuse Creative Archaeology Tracer** (27KB!)
+  - Decorator-based tracing (`@trace_mcp_tool`)
+  - Structured observations for decision points
+  - Performance and quality scoring
+  - Fail-safe design (tracing never breaks tools)
+
+- ✅ **Redis State Integration**
+  - `integrations/redis_state.py` - Session state persistence
+  - Cross-request state management
+  - Integration with Miadi-46 Redis patterns
+
+- ✅ **Cross-Instance Coordination**
+  - Platform consolidation plan documented
+  - Integration with all 4 forks (langchain, langgraph, ava-Flowise)
+
+**What's incomplete:**
+- ⚠️ **Narrative-aware routing** - Routes based on intent, not story position
+- ⚠️ **Three-universe processing** - Single-lens currently (Engineer World)
+- ⚠️ **Webhook event consumption** - Not yet integrated with Miadi-46
+
+**Key Files**:
+- `src/agentic_flywheel/routing/router.py` - Universal query router
+- `src/agentic_flywheel/integrations/langfuse_tracer.py` - Creative archaeology
+- `src/agentic_flywheel/integrations/redis_state.py` - State persistence
+- `CROSS_INSTANCE_COORDINATION.md` - Platform integration plan
+
+---
+
+### 6. **Miadi-46: GitHub Webhook Event-Driven Platform** ✅ ~80% Complete (NEW)
+📍 Location: `/src/Miadi-46/`
+
+**What's implemented:**
+- ✅ **Webhook ETL Pipeline**
+  - GitHub webhook receiver (`app/api/hooks/`)
+  - Event transformation to agent-friendly format
+  - Redis storage with structured keys
+  - Queue-based processing
+
+- ✅ **Local Hook System** (analogous to `.git/hooks/`)
+  - `.github-hooks/issues` - Triggered on issue events
+  - `.github-hooks/push` - Triggered on push events
+  - Environment variables passed to hooks (WEBHOOK_EVENT_TYPE, etc.)
+  - Stdin payload for full context
+
+- ✅ **Live Story Monitor API**
+  - `app/api/live-story-monitor/` - Real-time narrative interfaces
+  - Scene streaming, archive management
+  - Context stream for narrative state
+
+- ✅ **Multiverse 3-Act Narrative Framework** 
+  - Episodes with NCP structure (`episodes/s01e01-pilot.ncp.json`)
+  - Three-universe perspective system
+  - Character archetypes (Mia/Builder, Ava8/Keeper, Miette/Weaver)
+  - Full NCP schema in `schema/ncp-schema.json`
+
+- ✅ **Session Management**
+  - Multi-agent session tracking
+  - NewSessionUUID handler
+  - Cross-session coherence
+
+**What's incomplete:**
+- ⚠️ **NCP analysis pipeline** - Schema defined but not applied to new events
+- ⚠️ **Three-universe validation** - Single-lens processing currently
+- ⚠️ **Ceremonial protocol implementation** - Framework documented, not operationalized
+- ⚠️ **Story Engine integration** - Not connected to storytelling system
+
+**Key Files**:
+- `stories/multiverse_3act_2512012121/` - Complete multiverse framework
+- `stories/multiverse_3act_2512012121/schema/ncp-schema.json` - NCP definition
+- `WEBHOOK_HOOKS.md` - Hook system documentation
+- `.github-hooks/` - Executable hook scripts
+
+---
+
 ## 🎯 THE INTEGRATION MISSION: What Needs to Be Built
 
-### **Phase 1: Unified State Bridge** (Priority 1 - Foundation)
-**Goal**: Make the three systems aware of each other's state
+### **The Three-Universe Event Flow** (NEW VISION)
+
+Every GitHub webhook flows through three interpretive lenses:
 
 ```
-┌─────────────────┐
-│ Narrative State │ (NCP + Story State)
-└────────┬────────┘
-         │
-    ┌────▼────┬──────────┬──────────┐
-    │          │          │          │
-┌───▼──┐   ┌──▼──┐  ┌───▼──┐   ┌──▼──┐
-│Story │   │NCP  │  │Agent │   │Trace│
-│Graph │   │Anal │  │Flow  │   │Log  │
-└──────┘   └──────┘  └──────┘   └─────┘
+┌──────────────────────────────────────────────────────────────────────────┐
+│                     GitHub Webhook Event                                 │
+│  (Issue opened, PR created, Push, Comment, etc.)                        │
+└────────────────────────────────┬─────────────────────────────────────────┘
+                                 │
+                    ┌────────────▼────────────┐
+                    │     Miadi-46 ETL        │
+                    │   (Webhook receiver)    │
+                    └────────────┬────────────┘
+                                 │
+         ┌───────────────────────┼───────────────────────┐
+         │                       │                       │
+         ▼                       ▼                       ▼
+┌─────────────────┐   ┌─────────────────┐   ┌─────────────────┐
+│  ENGINEER WORLD │   │  CEREMONY WORLD │   │ STORY ENGINE    │
+│     (Mia)       │   │     (Ava8)      │   │    (Miette)     │
+│                 │   │                 │   │                 │
+│ - Technical     │   │ - Relational    │   │ - Narrative     │
+│   schema        │   │   accountability│   │   function      │
+│ - API structure │   │ - Sacred pause  │   │ - Act position  │
+│ - Build status  │   │ - K'é mapping   │   │ - Character arc │
+│ - Flow routing  │   │ - 7-generation  │   │ - Plot coherence│
+└────────┬────────┘   └────────┬────────┘   └────────┬────────┘
+         │                     │                     │
+         └─────────────────────┼─────────────────────┘
+                               │
+                    ┌──────────▼──────────┐
+                    │  Unified Narrative  │
+                    │       State         │
+                    │ (NCP + All 3 views) │
+                    └──────────┬──────────┘
+                               │
+              ┌────────────────┼────────────────┐
+              │                │                │
+              ▼                ▼                ▼
+     ┌─────────────┐  ┌─────────────┐  ┌─────────────┐
+     │  ava-lang   │  │  Narrative  │  │ Storytelling│
+     │   flow      │  │Intelligence │  │   System    │
+     │  (Router)   │  │  (Analysis) │  │ (Generator) │
+     └─────────────┘  └─────────────┘  └─────────────┘
+              │                │                │
+              └────────────────┼────────────────┘
+                               │
+                    ┌──────────▼──────────┐
+                    │    Langfuse Trace   │
+                    │ (Complete journey)  │
+                    └─────────────────────┘
+```
+
+### **Phase 1: Unified State Bridge** (Priority 1 - Foundation)
+**Goal**: Make all six systems aware of each other's state
+
+```
+┌───────────────────────────────────────────────────────────────┐
+│               Unified Narrative State Bridge                  │
+│     (NCP + Story State + 3-Universe + Webhook Events)        │
+└──────────────────────────────┬────────────────────────────────┘
+                               │
+    ┌──────────┬───────────┬───┴───┬───────────┬───────────┐
+    │          │           │       │           │           │
+┌───▼──┐  ┌───▼───┐  ┌────▼──┐  ┌─▼──┐  ┌────▼────┐  ┌───▼───┐
+│Story │  │  NCP  │  │ Agent │  │Trace│ │ava-lang │  │Miadi  │
+│Graph │  │ Anal  │  │ Flow  │  │ Log │ │  flow   │  │ -46   │
+└──────┘  └───────┘  └───────┘  └────┘  └─────────┘  └───────┘
 ```
 
 **Deliverables**:
-1. **Shared State Model** (`narrative_state_bridge.py`)
+1. **Shared State Model** (`unified_state_bridge.py`)
    - Extends NCP data with agent flow metadata
    - Tracks story generation + agent decisions + analytical insights
+   - **NEW**: Includes 3-universe perspective tracking
+   - **NEW**: Integrates with Redis for Miadi-46 compatibility
    - Serializable for checkpointing
 
-2. **Checkpoint Integration**
+2. **Webhook Event Integration** (NEW)
+   - Bridge GitHub webhooks to narrative events
+   - Transform `issues.opened` → `StoryBeat` with perspective metadata
+   - Track which universe(s) processed each event
+   - Example: Issue #110 = Inciting Incident in Story Engine World
+
+3. **Checkpoint Integration**
    - Use LangGraph checkpoint saver to persist narrative state
+   - **NEW**: Redis-backed for Miadi-46 compatibility
    - Enable mid-story intervention by agents
    - Resume narratives with full context recovery
 
-3. **Event Stream Architecture**
-   - Narrative events (character created, tension added, theme emerged)
-   - Agent events (flow executed, intent classified, decision made)
-   - Analytical events (emotional arc detected, character trajectory identified)
-   - All flowing through Langfuse
+4. **Three-Universe Event Classifier** (NEW)
+   - Each event gets 3 interpretations (Engineer, Ceremony, Story)
+   - Classify which universe should "lead" response
+   - Track cross-universe coherence
 
 ### **Phase 2: Narrative-Aware Agents** (Priority 2 - Intelligence)
-**Goal**: Make Flowise flows understand and respect narrative structure
+**Goal**: Make agents (Flowise, Langflow) understand and respect narrative structure
 
 **Deliverables**:
 1. **Narrative Intent Classification** (`narrative_intent_classifier.py`)
    - Move beyond keywords to NCP-aware intent
    - Example: "Is this agent adding tension or resolution?"
    - Route flows based on narrative position (setup, crisis, resolution)
+   - **NEW**: Classify intent per-universe (Mia sees technical, Miette sees story)
 
 2. **Context Injection for Flows**
-   - Inject current narrative state into Flowise queries
+   - Inject current narrative state into Flowise/Langflow queries
    - Example: "Given this character's arc so far, suggest next dialogue"
    - Personality-aware response generation
+   - **NEW**: Include universe-specific context (which lens is active?)
 
-3. **Story-Responsive Flow Registry**
+3. **Story-Responsive Flow Registry** (ava-langflow integration)
    - Dynamic flow activation based on story needs
    - Example: If character needs antagonist challenge → activate conflict resolver flow
    - If emotional beat needed → activate emotional deepener flow
+   - **NEW**: Route to appropriate backend (Flowise vs Langflow) based on capability
 
 ### **Phase 3: Story Intelligence Loop** (Priority 3 - Integration)
 **Goal**: Close the loop - stories learn from agent analysis
@@ -211,18 +414,48 @@ This mission unifies three interrelated projects into a cohesive stack:
 **Deliverables**:
 1. **Instrumentation**
    - NCP analysis events logged to Langfuse
-   - Flowise flow execution traced with span nesting
+   - Flowise/Langflow execution traced with span nesting
    - Story generation traced with emotional beat markers
+   - **NEW**: Webhook events traced from GitHub → processing → response
 
 2. **Narrative Trace Format**
    - Custom Langfuse event types for narrative concepts
    - Character perspective spans
    - Theme tension tracking in trace hierarchy
+   - **NEW**: Three-universe decision spans (which universe led?)
 
-3. **Live Story Monitor**
+3. **Live Story Monitor** (connects to Miadi-46)
    - Real-time trace viewer showing narrative generation
    - Visual representation of character arcs, themes, emotional beats
    - Agent decisions overlaid on story progress
+   - **NEW**: Webhook event stream visualization
+
+---
+
+### **Phase 5: Event-Driven Integration** (Priority 5 - Platform) (NEW)
+**Goal**: Connect the Narrative Intelligence Stack to Miadi-46's webhook architecture
+
+**Deliverables**:
+1. **Webhook → Narrative Event Bridge**
+   - Transform GitHub events into narrative beats
+   - Apply three-universe classification
+   - Store in Redis with NCP structure
+   - Trigger appropriate storytelling flows
+
+2. **GitHub Hook Enhancement** (`.github-hooks/`)
+   - Enhanced hooks that invoke narrative analysis
+   - Example: `issues` hook → Creates StoryBeat + triggers arc analysis
+   - Pass context through environment variables + stdin
+
+3. **Live Story Monitor API Integration**
+   - Connect `/api/live-story-monitor/` to unified state
+   - Stream narrative events in real-time
+   - Archive completed story arcs
+
+4. **Episode Generation Pipeline**
+   - From webhook events → S01E0X episodes
+   - Auto-generate NCP JSON from event sequences
+   - Apply multiverse 3-act structure
 
 ---
 
@@ -235,6 +468,87 @@ This mission unifies three interrelated projects into a cohesive stack:
 │   │   ├── narrative_intelligence/
 │   │   │   ├── nodes/
 │   │   │   │   ├── ncp_loader.py ✅
+│   │   │   │   ├── narrative_traversal.py ✅
+│   │   │   │   ├── emotional_classifier.py ✅
+│   │   │   │   ├── narrative_intent_classifier.py 🔴 NEW
+│   │   │   │   └── webhook_event_processor.py 🔴 NEW (Phase 5)
+│   │   │   ├── graphs/
+│   │   │   │   ├── character_arc.py ✅
+│   │   │   │   ├── thematic_analyzer.py ✅
+│   │   │   │   ├── unified_narrative_graph.py 🔴 NEW
+│   │   │   │   └── three_universe_processor.py 🔴 NEW
+│   │   │   └── schemas/
+│   │   │       ├── ncp.py ✅
+│   │   │       ├── state.py ✅
+│   │   │       ├── unified_state_bridge.py 🔴 NEW
+│   │   │       └── universe_perspective.py 🔴 NEW
+│   │   └── pyproject.toml
+│   └── storytelling-integration/
+│       ├── narrative_aware_story_graph.py 🔴 NEW
+│       ├── emotional_feedback_loop.py 🔴 NEW
+│       └── agentic_enrichment.py 🔴 NEW
+│
+├── integrations/
+│   ├── flowise_narrative_bridge.py 🔴 NEW
+│   ├── langflow_narrative_bridge.py 🔴 NEW (for ava-langflow)
+│   ├── langfuse_narrative_tracer.py 🔴 NEW
+│   ├── checkpoint_narrative_state.py 🔴 NEW
+│   ├── redis_state_bridge.py 🔴 NEW (Miadi-46 compatibility)
+│   └── miadi_webhook_bridge.py 🔴 NEW (Phase 5)
+│
+└── examples/
+    ├── unified_narrative_story_flow.py 🔴 NEW
+    └── webhook_to_episode.py 🔴 NEW (Phase 5)
+
+/workspace/ava-langflow/
+├── src/agentic_flywheel/
+│   ├── routing/
+│   │   ├── router.py ✅
+│   │   └── narrative_router.py 🔴 NEW (narrative-aware routing)
+│   ├── integrations/
+│   │   ├── langfuse_tracer.py ✅
+│   │   ├── redis_state.py ✅
+│   │   └── narrative_state_bridge.py 🔴 NEW
+│   ├── narrative_intent_classifier.py 🔴 NEW
+│   ├── ncp_context_injector.py 🔴 NEW
+│   └── three_universe_handler.py 🔴 NEW
+└── MISSION_251231.md 🔴 NEW
+
+/workspace/langchain/
+├── integrations/
+│   └── narrative_langfuse_handler.py 🔴 NEW
+│       └── Langfuse integration for narrative events
+
+/workspace/ava-Flowise/
+├── agentic_flywheel/
+│   ├── narrative_flow_router.py 🔴 NEW
+│   ├── ncp_context_injector.py 🔴 NEW
+│   └── flow_registry.yaml (update)
+
+/src/storytelling/
+├── storytelling/
+│   ├── narrative_intelligence_integration.py 🔴 NEW
+│   ├── emotional_beat_enricher.py 🔴 NEW
+│   ├── character_arc_tracker.py 🔴 NEW
+│   ├── analytical_feedback_loop.py 🔴 NEW
+│   └── graph.py (enhance existing)
+└── MISSION_251231.md ✅
+
+/src/Miadi-46/
+├── .github-hooks/
+│   ├── issues (enhance) 🔴 UPDATE
+│   ├── push (enhance) 🔴 UPDATE
+│   └── narrative_processor.sh 🔴 NEW
+├── app/api/
+│   ├── narrative-bridge/ 🔴 NEW
+│   │   └── route.ts (receive narrative state from stack)
+│   └── live-story-monitor/ ✅ (connect to unified state)
+├── stories/multiverse_3act_2512012121/
+│   ├── schema/ncp-schema.json ✅
+│   ├── episodes/ ✅
+│   └── auto-generator/ 🔴 NEW (webhook → episode pipeline)
+└── MISSION_251231.md 🔴 NEW
+```
 │   │   │   │   ├── narrative_traversal.py ✅
 │   │   │   │   ├── emotional_classifier.py ✅
 │   │   │   │   └── narrative_intent_classifier.py 🔴 NEW

@@ -186,3 +186,5 @@ Chinook.db
 .mcp*
 .settings*
 .gemini
+.hch/
+.coaia
