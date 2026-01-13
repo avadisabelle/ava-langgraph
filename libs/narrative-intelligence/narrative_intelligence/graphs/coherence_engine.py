@@ -14,7 +14,7 @@ Features:
 from dataclasses import dataclass, field
 from typing import List, Dict, Any, Optional, Literal
 from enum import Enum
-from datetime import datetime, UTC
+from datetime import datetime, timezone
 from langgraph.graph import StateGraph, END
 
 from ..schemas.unified_state_bridge import (
@@ -101,7 +101,7 @@ class CoherenceScore:
     pacing: ComponentScore
     theme_saturation: ComponentScore
     continuity: ComponentScore
-    analyzed_at: str = field(default_factory=lambda: datetime.now(UTC).isoformat())
+    analyzed_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     
     def to_dict(self) -> Dict[str, Any]:
         return {

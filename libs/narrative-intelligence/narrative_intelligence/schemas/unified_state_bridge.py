@@ -20,7 +20,7 @@ Created: 2025-12-31
 """
 
 from dataclasses import dataclass, field, asdict
-from datetime import datetime
+from datetime import datetime, timezone
 from enum import Enum
 from typing import List, Dict, Optional, Any, Union
 import json
@@ -74,7 +74,7 @@ class ThreeUniverseAnalysis:
     story_engine: UniversePerspective
     lead_universe: Universe
     coherence_score: float  # How well the three perspectives align (0-1)
-    timestamp: str = field(default_factory=lambda: datetime.utcnow().isoformat())
+    timestamp: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -94,7 +94,7 @@ class ThreeUniverseAnalysis:
             story_engine=UniversePerspective.from_dict(data["story_engine"]),
             lead_universe=Universe(data["lead_universe"]),
             coherence_score=data["coherence_score"],
-            timestamp=data.get("timestamp", datetime.utcnow().isoformat())
+            timestamp=data.get("timestamp", datetime.now(timezone.utc).isoformat())
         )
     
     def get_perspective(self, universe: Universe) -> UniversePerspective:
@@ -197,7 +197,7 @@ class StoryBeat:
     # Metadata
     source: str = "generator"  # "generator", "webhook", "agent", etc.
     source_event_id: Optional[str] = None  # GitHub event ID if from webhook
-    timestamp: str = field(default_factory=lambda: datetime.utcnow().isoformat())
+    timestamp: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     
     # Enrichment tracking
     enrichments_applied: List[str] = field(default_factory=list)
@@ -239,7 +239,7 @@ class StoryBeat:
             character_arc_impact=data.get("character_arc_impact", 0.0),
             source=data.get("source", "unknown"),
             source_event_id=data.get("source_event_id"),
-            timestamp=data.get("timestamp", datetime.utcnow().isoformat()),
+            timestamp=data.get("timestamp", datetime.now(timezone.utc).isoformat()),
             enrichments_applied=data.get("enrichments_applied", []),
             quality_score=data.get("quality_score", 0.5)
         )
@@ -355,7 +355,7 @@ class RoutingDecision:
     result_summary: str = ""
     latency_ms: float = 0.0
     
-    timestamp: str = field(default_factory=lambda: datetime.utcnow().isoformat())
+    timestamp: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -385,7 +385,7 @@ class RoutingDecision:
             success=data.get("success", True),
             result_summary=data.get("result_summary", ""),
             latency_ms=data.get("latency_ms", 0.0),
-            timestamp=data.get("timestamp", datetime.utcnow().isoformat())
+            timestamp=data.get("timestamp", datetime.now(timezone.utc).isoformat())
         )
 
 
@@ -425,8 +425,8 @@ class UnifiedNarrativeState:
     episode_beats_count: int = 0
     
     # Timestamps
-    created_at: str = field(default_factory=lambda: datetime.utcnow().isoformat())
-    updated_at: str = field(default_factory=lambda: datetime.utcnow().isoformat())
+    created_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+    updated_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     
     # Metrics
     overall_coherence: float = 0.5
@@ -467,8 +467,8 @@ class UnifiedNarrativeState:
             routing_decisions=[RoutingDecision.from_dict(r) for r in data.get("routing_decisions", [])],
             current_episode_id=data.get("current_episode_id"),
             episode_beats_count=data.get("episode_beats_count", 0),
-            created_at=data.get("created_at", datetime.utcnow().isoformat()),
-            updated_at=data.get("updated_at", datetime.utcnow().isoformat()),
+            created_at=data.get("created_at", datetime.now(timezone.utc).isoformat()),
+            updated_at=data.get("updated_at", datetime.now(timezone.utc).isoformat()),
             overall_coherence=data.get("overall_coherence", 0.5),
             emotional_arc_strength=data.get("emotional_arc_strength", 0.5)
         )
@@ -501,12 +501,12 @@ class UnifiedNarrativeState:
             self.position.phase = NarrativePhase.RESOLUTION
         
         self.episode_beats_count += 1
-        self.updated_at = datetime.utcnow().isoformat()
+        self.updated_at = datetime.now(timezone.utc).isoformat()
     
     def add_routing_decision(self, decision: RoutingDecision) -> None:
         """Record a routing decision"""
         self.routing_decisions.append(decision)
-        self.updated_at = datetime.utcnow().isoformat()
+        self.updated_at = datetime.now(timezone.utc).isoformat()
     
     def update_character_arc(self, character_id: str, impact: float, description: str) -> None:
         """Update a character's arc position"""
@@ -514,18 +514,18 @@ class UnifiedNarrativeState:
             char = self.characters[character_id]
             char.arc_position = min(1.0, char.arc_position + impact)
             char.growth_points.append({
-                "timestamp": datetime.utcnow().isoformat(),
+                "timestamp": datetime.now(timezone.utc).isoformat(),
                 "impact": impact,
                 "description": description
             })
-            self.updated_at = datetime.utcnow().isoformat()
+            self.updated_at = datetime.now(timezone.utc).isoformat()
     
     def update_theme_strength(self, theme_id: str, strength_delta: float) -> None:
         """Update a theme's strength"""
         if theme_id in self.themes:
             theme = self.themes[theme_id]
             theme.strength = max(0.0, min(1.0, theme.strength + strength_delta))
-            self.updated_at = datetime.utcnow().isoformat()
+            self.updated_at = datetime.now(timezone.utc).isoformat()
     
     def get_last_n_beats(self, n: int = 5) -> List[StoryBeat]:
         """Get the last n beats for context"""
@@ -557,7 +557,7 @@ class UnifiedNarrativeState:
         """Start a new episode, archiving current beats"""
         self.current_episode_id = episode_id
         self.episode_beats_count = 0
-        self.updated_at = datetime.utcnow().isoformat()
+        self.updated_at = datetime.now(timezone.utc).isoformat()
 
 
 # =============================================================================

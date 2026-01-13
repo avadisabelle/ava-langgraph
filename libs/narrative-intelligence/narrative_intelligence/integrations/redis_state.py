@@ -15,7 +15,7 @@ Created: 2025-12-31
 
 import json
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Optional, List, Dict, Any, AsyncIterator
 from dataclasses import dataclass
 import asyncio
@@ -215,7 +215,7 @@ class NarrativeRedisManager:
         """
         try:
             key = RedisKeys.state(state.session_id)
-            state.updated_at = datetime.utcnow().isoformat()
+            state.updated_at = datetime.now(timezone.utc).isoformat()
             
             ttl_seconds = self.config.state_ttl_hours * 3600
             await self._redis.setex(key, ttl_seconds, state.to_json())
@@ -564,22 +564,22 @@ class NarrativeRedisManager:
             Dict with health status
         """
         try:
-            start = datetime.utcnow()
+            start = datetime.now(timezone.utc)
             await self._redis.ping()
-            latency = (datetime.utcnow() - start).total_seconds() * 1000
+            latency = (datetime.now(timezone.utc) - start).total_seconds() * 1000
             
             return {
                 "status": "healthy",
                 "connected": self._connected,
                 "latency_ms": latency,
-                "timestamp": datetime.utcnow().isoformat()
+                "timestamp": datetime.now(timezone.utc).isoformat()
             }
         except Exception as e:
             return {
                 "status": "unhealthy",
                 "connected": self._connected,
                 "error": str(e),
-                "timestamp": datetime.utcnow().isoformat()
+                "timestamp": datetime.now(timezone.utc).isoformat()
             }
 
 
@@ -608,7 +608,7 @@ class MockRedis:
     
     async def setex(self, key: str, ttl_seconds: int, value: str) -> bool:
         self._data[key] = value
-        self._expiry[key] = datetime.utcnow() + timedelta(seconds=ttl_seconds)
+        self._expiry[key] = datetime.now(timezone.utc) + timedelta(seconds=ttl_seconds)
         return True
     
     async def delete(self, *keys: str) -> int:
@@ -654,14 +654,14 @@ class MockRedis:
         return True
     
     async def expire(self, key: str, ttl_seconds: int) -> bool:
-        self._expiry[key] = datetime.utcnow() + timedelta(seconds=ttl_seconds)
+        self._expiry[key] = datetime.now(timezone.utc) + timedelta(seconds=ttl_seconds)
         return True
     
     async def close(self):
         pass
     
     def _check_expiry(self, key: str) -> None:
-        if key in self._expiry and datetime.utcnow() > self._expiry[key]:
+        if key in self._expiry and datetime.now(timezone.utc) > self._expiry[key]:
             self._data.pop(key, None)
             self._lists.pop(key, None)
             self._expiry.pop(key, None)
