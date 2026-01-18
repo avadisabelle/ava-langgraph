@@ -1,2 +1,4 @@
 coaiapy
 coaiapy-mcp
+langgraph
+typing_extensions
