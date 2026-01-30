@@ -12,7 +12,7 @@ This graph takes an event and produces a ThreeUniverseAnalysis with:
 - Coherence score
 """
 
-from typing import Dict, Any, Optional, List, TypedDict, Annotated
+from typing import Dict, Any, Optional, List, TypedDict, Annotated, Callable, Protocol
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from enum import Enum
@@ -36,6 +36,24 @@ from ..schemas.unified_state_bridge import (
     NarrativeFunction,
     StoryBeat,
 )
+
+
+# Tracing callback protocol for narrative-tracing integration
+class AnalysisCallback(Protocol):
+    """Protocol for callbacks that receive three-universe analysis results."""
+    
+    def __call__(
+        self,
+        event_id: str,
+        event_content: str,
+        engineer_result: Dict[str, Any],
+        ceremony_result: Dict[str, Any],
+        story_engine_result: Dict[str, Any],
+        lead_universe: str,
+        coherence_score: float,
+    ) -> None:
+        """Called when three-universe analysis completes."""
+        ...
 
 
 class EventType(str, Enum):
@@ -807,11 +825,28 @@ class ThreeUniverseProcessor:
         processor = ThreeUniverseProcessor()
         result = processor.process(event)
         print(result.lead_universe)  # "ceremony"
+        
+    With tracing callback (for narrative-tracing integration):
+        from narrative_tracing.adapters import LangGraphBridge
+        
+        handler = NarrativeTracingHandler(story_id="story_123")
+        bridge = LangGraphBridge(handler)
+        processor = ThreeUniverseProcessor(tracing_callback=bridge.create_three_universe_callback())
+        result = processor.process(event)  # Automatically traced to Langfuse
     """
     
-    def __init__(self):
-        """Initialize the processor with the compiled graph."""
+    def __init__(
+        self,
+        tracing_callback: Optional[AnalysisCallback] = None,
+    ):
+        """Initialize the processor with optional tracing.
+        
+        Args:
+            tracing_callback: Optional callback for narrative-tracing integration.
+                Called after each analysis completes with event details and results.
+        """
         self._graph = None
+        self._tracing_callback = tracing_callback
     
     @property
     def graph(self):
@@ -841,9 +876,44 @@ class ThreeUniverseProcessor:
         if result.get("error"):
             raise ValueError(f"Processing error: {result['error']}")
         
-        # Return the analysis
+        # Build the analysis
         analysis_dict = result.get("analysis", {})
-        return ThreeUniverseAnalysis.from_dict(analysis_dict)
+        analysis = ThreeUniverseAnalysis.from_dict(analysis_dict)
+        
+        # Call tracing callback if configured
+        if self._tracing_callback is not None:
+            event_id = event.get("event_id") or event.get("id") or f"{event_type}_{id(event)}"
+            event_content = self._extract_event_content(event)
+            
+            self._tracing_callback(
+                event_id=str(event_id),
+                event_content=event_content,
+                engineer_result=analysis.engineer.to_dict() if analysis.engineer else {},
+                ceremony_result=analysis.ceremony.to_dict() if analysis.ceremony else {},
+                story_engine_result=analysis.story_engine.to_dict() if analysis.story_engine else {},
+                lead_universe=analysis.lead_universe.value if analysis.lead_universe else "engineer",
+                coherence_score=analysis.coherence_score or 0.0,
+            )
+        
+        return analysis
+    
+    def _extract_event_content(self, event: Dict[str, Any]) -> str:
+        """Extract human-readable content from event for tracing."""
+        # Try common content locations
+        if "content" in event:
+            return str(event["content"])[:500]
+        if "payload" in event:
+            payload = event["payload"]
+            if isinstance(payload, dict):
+                if "issue" in payload and "title" in payload["issue"]:
+                    return payload["issue"]["title"]
+                if "pull_request" in payload and "title" in payload["pull_request"]:
+                    return payload["pull_request"]["title"]
+                if "comment" in payload and "body" in payload["comment"]:
+                    return payload["comment"]["body"][:500]
+        if "message" in event:
+            return str(event["message"])[:500]
+        return f"Event: {event.get('event_type', 'unknown')}"
     
     def process_webhook(self, webhook_payload: Dict[str, Any]) -> ThreeUniverseAnalysis:
         """
