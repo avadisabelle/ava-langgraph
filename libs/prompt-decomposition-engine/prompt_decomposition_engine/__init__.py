@@ -33,6 +33,10 @@ from prompt_decomposition_engine.nodes.ceremony_gate import (
     CeremonyGate,
 )
 
+from prompt_decomposition_engine.graphs.state_graph_factory import (
+    create_decomposition_state_graph,
+)
+
 # Re-export core primitives for convenience
 from prompt_decomposition import (
     Direction,
@@ -42,6 +46,9 @@ from prompt_decomposition import (
     ActionStackBuilder,
     MedicineWheelBridge,
     decompose,
+    RunnableDecomposer,
+    RunnableDirectionalAnalyzer,
+    RunnableWheelGate,
 )
 
 __all__ = [
@@ -57,6 +64,7 @@ __all__ = [
     "PerspectiveAnalyzer",
     "GateDecision",
     "CeremonyGate",
+    "create_decomposition_state_graph",
     "Direction",
     "DirectionalDecomposer",
     "IntentExtractor",
@@ -64,4 +72,7 @@ __all__ = [
     "ActionStackBuilder",
     "MedicineWheelBridge",
     "decompose",
+    "RunnableDecomposer",
+    "RunnableDirectionalAnalyzer",
+    "RunnableWheelGate",
 ]
