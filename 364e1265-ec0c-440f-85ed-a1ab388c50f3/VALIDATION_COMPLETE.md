@@ -95,7 +95,7 @@ All **5 core components** from the original design specification are **fully imp
 
 ### Test Execution
 ```bash
-cd /workspace/langgraph/libs/narrative-intelligence
+cd /workspace/repos/avadisabelle/ava-langgraph/libs/narrative-intelligence
 python -m pytest tests/ -v
 ```
 
@@ -273,8 +273,8 @@ All 5 core components of the Narrative Intelligence Toolkit have been:
 4. ✅ Confirmed working in integration scenarios
 
 The implementation is **production-ready** and meets all requirements from the original design specification in:
-- `/workspace/langgraph/364e1265-ec0c-440f-85ed-a1ab388c50f3/1_mia_ncp_loader_node.md`
-- `/workspace/langgraph/MISSION_251231.md`
+- `/workspace/repos/avadisabelle/ava-langgraph/364e1265-ec0c-440f-85ed-a1ab388c50f3/1_mia_ncp_loader_node.md`
+- `/workspace/repos/avadisabelle/ava-langgraph/MISSION_251231.md`
 
 **Total Test Coverage**: 153 tests, 100% passing ✅
 

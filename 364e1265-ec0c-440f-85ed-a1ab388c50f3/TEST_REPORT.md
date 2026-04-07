@@ -231,7 +231,7 @@ Sarah arrives at the new town, feeling uncertain
 ## Test Command
 
 ```bash
-cd /workspace/langgraph/libs/narrative-intelligence
+cd /workspace/repos/avadisabelle/ava-langgraph/libs/narrative-intelligence
 python -m pytest tests/test_core_components.py -v
 ```
 

@@ -29,7 +29,7 @@ Every GitHub webhook becomes a narrative event, processed through all three lens
 ## 🏗️ Current State of Components
 
 ### 1. **LangGraph: Narrative Intelligence Toolkit** ✅ 100% Phase 1 + Phase 2 Starting
-📍 Location: `/workspace/langgraph/libs/narrative-intelligence/`
+📍 Location: `/workspace/repos/avadisabelle/ava-langgraph/libs/narrative-intelligence/`
 
 **What's implemented:**
 - ✅ **NCP Schema Models** - Complete Narrative Context Protocol data structures
@@ -167,7 +167,7 @@ Every GitHub webhook becomes a narrative event, processed through all three lens
 ---
 
 ### 4. **LangChain: Langfuse Tracing** ✅ ~85% Complete
-📍 Location: `/workspace/langchain/`
+📍 Location: `/workspace/repos/avadisabelle/ava-langchain/`
 
 **What's implemented:**
 - ✅ **Langfuse Handler** - Full integration for LangChain callbacks
@@ -462,7 +462,7 @@ Every GitHub webhook flows through three interpretive lenses:
 ## 📂 File Structure & Implementation Plan
 
 ```
-/workspace/langgraph/
+/workspace/repos/avadisabelle/ava-langgraph/
 ├── libs/
 │   ├── narrative-intelligence/
 │   │   ├── narrative_intelligence/
@@ -514,7 +514,7 @@ Every GitHub webhook flows through three interpretive lenses:
 │   └── three_universe_handler.py 🔴 NEW
 └── MISSION_251231.md 🔴 NEW
 
-/workspace/langchain/
+/workspace/repos/avadisabelle/ava-langchain/
 ├── integrations/
 │   └── narrative_langfuse_handler.py 🔴 NEW
 │       └── Langfuse integration for narrative events
@@ -578,7 +578,7 @@ Every GitHub webhook flows through three interpretive lenses:
     └── unified_narrative_story_flow.py 🔴 NEW
         └── End-to-end example: NCP → Story → Analysis → Agent Enrichment
 
-/workspace/langchain/
+/workspace/repos/avadisabelle/ava-langchain/
 ├── integrations/
 │   └── narrative_langfuse_handler.py 🔴 NEW
 │       └── Langfuse integration for narrative events
@@ -726,11 +726,11 @@ When delegating work:
 
 ## 📚 Key References
 
-- **NCP Protocol**: Defined in `/workspace/langgraph/libs/narrative-intelligence/narrative_intelligence/schemas/ncp.py`
+- **NCP Protocol**: Defined in `/workspace/repos/avadisabelle/ava-langgraph/libs/narrative-intelligence/narrative_intelligence/schemas/ncp.py`
 - **Story Generation**: `/src/storytelling/storytelling/graph.py` (55KB - comprehensive)
 - **Agentic Flywheel Spec**: `/workspace/ava-Flowise/` and `/cesaret/src/agentic_flywheel/`
-- **Existing QA**: `/workspace/langgraph/libs/narrative-intelligence/QA_REPORT.md`
-- **Langfuse Integration**: `/workspace/langchain/` (ready to extend)
+- **Existing QA**: `/workspace/repos/avadisabelle/ava-langgraph/libs/narrative-intelligence/QA_REPORT.md`
+- **Langfuse Integration**: `/workspace/repos/avadisabelle/ava-langchain/` (ready to extend)
 
 ---
 
