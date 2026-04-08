@@ -2,7 +2,22 @@
 
 from typing import Optional, List, Dict, Any, Annotated
 from typing_extensions import TypedDict
-from langgraph.graph.message import add_messages
+
+# Make langgraph import optional for development without full deps
+try:
+    from langgraph.graph.message import add_messages
+    HAS_LANGGRAPH = True
+except ImportError:
+    HAS_LANGGRAPH = False
+    # Create a simple placeholder reducer
+    def add_messages(left, right):
+        """Placeholder message reducer when langgraph is not available."""
+        if left is None:
+            left = []
+        if right is None:
+            right = []
+        return left + right
+
 from .ncp import NCPData
 
 

@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "langgraph-prompt-decomposition-engine"
+version = "0.1.0"
+description = "Prompt Decomposition Engine for LangGraph - Graph-level orchestration of Four Directions analysis, three-universe perspective processing, and ceremony gating"
+authors = [
+    {name = "ava"}
+]
+requires-python = ">=3.10"
+license = "MIT"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "langchain-prompt-decomposition>=0.1.0",
+]
+
+[project.optional-dependencies]
+narrative = [
+    "langgraph-narrative-intelligence>=0.1.0",
+]
+relational = [
+    "langchain-relational-intelligence>=0.1.0",
+]
+
+[project.urls]
+Source = "https://github.com/avadisabelle/ava-langgraph/tree/main/libs/prompt-decomposition-engine"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["prompt_decomposition_engine*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
